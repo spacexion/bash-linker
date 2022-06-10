@@ -52,7 +52,7 @@ PRE_REPLACES="BUILD_TIME=\"$( date +%Y-%m-%d_%H:%M:%S )\" #,VERSION=\"0.0.1\" #"
 
 # Link source file into target dir, optionally renamed and with pre-link regexes/replaces lists
 ./bash-linker.sh  "src-path=../src/my-script.sh" "target-dir=../build" "target-name=my-script-built.sh" \
-                  "pre-regexes=$REGEXES" "pre-replaces=$REPLACES"
+                  "pre-regexes=$PRE_REGEXES" "pre-replaces=$PRE_REPLACES"
 
 ```
 
@@ -110,8 +110,8 @@ Example result build '../build/my-script-built.sh':
 ```bash
 #!/bin/bash
 
-BUILD="" #%BUILD% auto-generated upon build
-BUILD_TIME="" #%BUILD_TIME% auto-generated upon build
+BUILD="2d56amx8" # auto-generated upon build
+BUILD_TIME="2022-05-29_09:25:37" # auto-generated upon build
 
 SCRIPT_DIR="$( cd - )" # basic way to get the script base path (eg. not full proof)
 
